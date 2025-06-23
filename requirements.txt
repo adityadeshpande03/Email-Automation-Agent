@@ -1,0 +1,8 @@
+python-dotenv
+google-genai
+fastapi
+uvicorn
+agno
+pydantic
+streamlit
+pydantic[email]
