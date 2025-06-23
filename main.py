@@ -39,19 +39,6 @@ async def send_email_with_test_link(request: EmailWithTestLinkRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# @app.post("/send-bulk-emails", response_model=EmailResponse)
-# async def send_bulk_emails(request: BulkEmailRequest):
-#     """Send emails to multiple candidates"""
-#     try:
-#         result = process_email_input(email_input=request.email_input)
-        
-#         if "Successfully sent" in result:
-#             return EmailResponse(success=True, message=result)
-#         else:
-#             return EmailResponse(success=False, message=result)
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
 @app.get("/")
 async def root():
     """Root endpoint with API information"""
@@ -70,4 +57,4 @@ async def health_check():
     return {"status": "healthy"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
